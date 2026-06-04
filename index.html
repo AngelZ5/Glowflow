@@ -7,7 +7,39 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <button class="agendar">Agendar</button>
+    <header>
+        <nav>LOGO AQUI</nav>
+    </header>
+    <div class="content">
+        <button class="agendar" onclick="abrirModal()">Agendar</button>
+        
+        <div class="cards-container"> 
+            <div class="card">
+                <div class="card-date">10/06/2026</div>
+                <div class="card-time">08:00H</div>
+                <div class="card-patient">Maria Gonçalo de Souza</div>
+                <div class="card-procedure">Preenchimento com Ácido Hialurônico</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="fecharModal()"></div>
+
+    <div class="modal" id="modal">
+        <div class="modal-caixa">
+            <h2>AGENDAMENTO</h2> 
+            <!-- Nessa parte você vai adicionar os inputs e botões do formulário -->
+             <!--Siga a sequencia-->
+             <!--1. Nome do cliente-->
+             <!--2. CPF (Coloque uma sobreposição nesse input para dizer que ele está desativado durante a apresentação)-->
+             <!--3. Telefone/WhatsApp-->
+             <!--4. Procedimento-->
+             <!--5. Data e Hora-->
+             <!--6. Botão de Agendar-->
+        </div>
+    </div>
+
+    
+    <script src="./src/script.js"></script>
 </body>
 </html>
