@@ -7,37 +7,71 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <header>
-        <nav>LOGO AQUI</nav>
-    </header>
+    <div class="fixed-clock" id="fixed-clock">10:30</div>
+    <div class="header">
+        <div class="profile-pic-placeholder"></div>
+        <div class="profile-name">Ana Cardozo Brito</div>
+    </div>
+    <div class="green-line"></div>
+
     <div class="content">
-        <button class="agendar" onclick="abrirModal()">Agendar</button>
-        
-        <div class="cards-container"> 
-            <div class="card">
-                <div class="card-date">10/06/2026</div>
-                <div class="card-time">08:00H</div>
-                <div class="card-patient">Maria Gonçalo de Souza</div>
-                <div class="card-procedure">Preenchimento com Ácido Hialurônico</div>
+        <div class="left-panel">
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-date">10/06/2026 <span class="card-time">08:00H</span></div>
+                    <div class="card-patient">Paciente - Igor Kannário</div>
+                    <div class="card-procedure">Microagulhamento</div>  
+                    
+                </div>
+                
+                <div class="card">
+                    <div class="card-date">11/06/2026 <span class="card-time">09:30H</span></div>
+                    <div class="card-patient">Paciente - Ivete Sangalo</div>
+                    <div class="card-procedure">Preenchimento com Ácido Hialurônico</div>
+                    
+                </div>
             </div>
         </div>
     </div>
+
+    <button class="fab-button" onclick="abrirModal()">+</button>
 
     <div class="overlay" id="overlay" onclick="fecharModal()"></div>
 
     <div class="modal" id="modal">
         <div class="modal-caixa">
-            <h2>AGENDAMENTO</h2> 
-            <!-- Nessa parte você vai adicionar os inputs e botões do formulário -->
-             <!--Siga a sequencia-->
-             <!--1. Nome do cliente-->
-             <!--2. CPF (Coloque uma sobreposição nesse input para dizer que ele está desativado durante a apresentação)-->
-             <!--3. Telefone/WhatsApp-->
-             <!--4. Procedimento-->
-             <!--5. Data e Hora-->
-             <!--6. Botão de Agendar-->
+            <h2>AGENDAMENTO</h2>
+
+            <label>NOME</label>
+            <input type="text" id="input-nome" placeholder="" />
+
+            <label>CPF</label>
+            <input type="text" id="input-cpf" placeholder="" />
+
+            <label>TELEFONE</label>
+            <input type="tel" id="input-telefone" placeholder="" />
+
+            <label>PROCEDIMENTO</label>
+<select id="input-procedimento">
+    <option value="" disabled selected>Selecione um procedimento</option>
+    <option value="Microagulhamento">Microagulhamento</option>
+    <option value="Preenchimento com Ácido Hialurônico">Preenchimento com Ácido Hialurônico</option>
+    <option value="Peeling Diamante">Peeling Diamante</option>
+    <option value="Toxina Botulínica (Botox)">Toxina Botulínica (Botox)</option>
+    <option value="Limpeza de Pele Profunda">Limpeza de Pele Profunda</option>
+    <option value="Bioestimulador de Colágeno">Bioestimulador de Colágeno</option>
+    <option value="Carboxiterapia">Carboxiterapia</option>
+    <option value="Peeling Químico">Peeling Químico</option>
+</select>
+
+            <label>DATA E HORA</label>
+            <input type="datetime-local" id="input-data" />
+
+
+            <div class="modal-botoes">
+                <button class="btn-salvar" onclick="criarAgendamento()">AGENDAR</button>
+            </div>
         </div>
-    </div>
 
     
     <script src="./src/script.js"></script>

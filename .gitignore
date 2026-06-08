@@ -1,11 +1,11 @@
-# Dependências do Node (nunca commitar)
+# Dependências do Node 
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# Variáveis de ambiente / Senhas (CRÍTICO)
+# Variáveis de ambiente / Senhas 
 .env
 .env.local
 .env.development.local
