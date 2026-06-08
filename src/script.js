@@ -1,7 +1,7 @@
 // Função que roda quando clica em enviar o formulário
 async function criarAgendamento(dadosFormulario) {
-    const resposta = await fetch('http://localhost:3000/api/agendamentos', {
-        method: 'POST',
+    const resposta = await fetch('https://glowflow.onrender.com/api/agendamentos', {
+    method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dadosFormulario)
     });
@@ -123,7 +123,7 @@ async function criarAgendamento() {
     };
 
     try {
-        const resposta = await fetch('http://localhost:3000/api/agendamentos', {
+        const resposta = await fetch('https://glowflow.onrender.com/api/agendamentos', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dadosFormulario)
@@ -161,7 +161,7 @@ async function criarAgendamento() {
 async function carregarAgendamentosDoBanco() {
     try {
         console.log("📥 Buscando agendamentos salvos no MongoDB...");
-        const resposta = await fetch('http://localhost:3000/api/agendamentos');
+        const resposta = await fetch('https://glowflow.onrender.com/api/agendamentos');
         
         if (!resposta.ok) {
             throw new Error(`Erro ao buscar dados: ${resposta.status}`);
@@ -197,7 +197,7 @@ async function deletarAgendamento(id) {
     }
 
     try {
-        const resposta = await fetch(`http://localhost:3000/api/agendamentos/${id}`, {
+        const resposta = await fetch(`https://glowflow.onrender.com/api/agendamentos/${id}`, {
             method: 'DELETE'
         });
 
