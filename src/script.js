@@ -55,6 +55,41 @@ function atualizarRelogio() {
 atualizarRelogio();
 setInterval(atualizarRelogio, 1000);
 
+// Função para alternar entre temas claro e escuro
+function toggleTheme() {
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = body.getAttribute('data-theme');
+    
+    if (currentTheme === 'light') {
+        body.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        body.setAttribute('data-theme', 'light');
+        themeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Carregar tema salvo no localStorage
+function loadSavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    if (savedTheme === 'light') {
+        body.setAttribute('data-theme', 'light');
+        themeToggle.textContent = '☀️';
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '🌙';
+    }
+}
+
+// Carregar tema ao iniciar a página
+document.addEventListener('DOMContentLoaded', loadSavedTheme);
+
 //Funcionalidade principal do sistema, responsavel por ordenar os cards pela data mais proxima
 // utilizei nested functions
 function closerDate() {
